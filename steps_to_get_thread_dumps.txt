@@ -1,27 +1,22 @@
 To obtain thread dumps from a JBoss (WildFly) application server, you can follow these steps:
 
-### Method : Using jstack
-
-1. **Identify the JBoss Process:**
+1. Identify the JBoss Process:
    - Find the process ID (PID) of the JBoss server. You can do this by using commands like `ps` on Linux or using Task Manager on Windows.
 
-   ```bash
    ps -ef | grep java
-   ```
+ 
 
-2. **Use jstack to Get Thread Dump:**
+2. Use jstack to Get Thread Dump:
    - Once you have the PID, use `jstack` to capture the thread dump. Run the following command in your terminal:
 
-   ```bash
    jstack <PID> > thread_dump.txt
-   ```
 
    Replace `<PID>` with the actual process ID. This command will save the thread dump to a file named `thread_dump.txt`.
 
 
 ### Notes
 
-- **Access Permissions:** Ensure that you have the necessary permissions to execute these commands, especially in production environments.
-- **Performance Impact:** Taking thread dumps may have a temporary impact on performance, so consider doing this during a maintenance window or when the system is under low load.
+- Access Permissions: Ensure that you have the necessary permissions to execute these commands, especially in production environments.
+- Performance Impact: Taking thread dumps may have a temporary impact on performance, so consider doing this during a maintenance window or when the system is under low load.
 
 By following these methods, you should be able to successfully capture thread dumps from your JBoss application server.
